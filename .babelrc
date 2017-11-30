@@ -1,0 +1,13 @@
+{
+  "presets": [
+    ["env", { "modules": false }]
+  ],
+  "plugins": ["transform-async-to-generator", "transform-object-rest-spread"],
+  "env": {
+    "test": {
+      "presets": [
+        "es2015"
+      ]
+    }
+  }
+}
