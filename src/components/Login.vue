@@ -1,10 +1,9 @@
 <template>
-  <div class="container">
     <div class="ui middle aligned center aligned grid">
-      <div class="column">
+      <div class="column login-wrapper">
         <h2 class="ui teal image header">
           <div class="content">
-            Log-in to your account
+            Log-in
           </div>
         </h2>
         <form class="ui large form">
@@ -30,7 +29,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -47,19 +45,11 @@
   }
 </script>
 
-<style lang="scss">
-  body {
-    background-color: #DADADA;
+<style scoped>
+  .grid {
+    height: 100vh;
   }
-  body {
-    .grid {
-      height: 100%;
-    }
-  }
-  .image {
-    margin-top: -100px;
-  }
-  .column {
+  .login-wrapper {
     max-width: 450px;
   }
 </style>
