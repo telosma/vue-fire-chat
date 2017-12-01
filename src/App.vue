@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="ui container">
     <router-view></router-view>
   </div>
 </template>
@@ -11,5 +11,9 @@
   }
 </script>
 
-<style lang="scss">
+<style>
+  body {
+    background-color: #DADADA;
+    margin-left: calc(100vw - 100%);
+  }
 </style>
