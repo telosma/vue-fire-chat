@@ -12,6 +12,7 @@
 </template>
 
 <script>
+  import { mapActions } from 'vuex'
   const inBrowser = typeof window !== 'undefined'
   if (inBrowser) {
     var semantic = require('semantic-ui-css/semantic.js')
@@ -36,8 +37,12 @@
     }),
     methods: {
       callSetLangActions (event) {
-        this.$store.dispatch('setLang', event.target.getAttribute('value'))
-      }
+        this.setLang(event.target.getAttribute('value'))
+      },
+
+      ...mapActions('moduleI18n', [
+        'setLang',
+      ])
     }
   }
 </script>

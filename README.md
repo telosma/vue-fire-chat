@@ -2,6 +2,11 @@
 
 > A Vue.js project
 
+## Local version
+
+`node: v8.9.1`
+`npm: 5.2.0`
+
 ## Build Setup
 
 ``` bash
