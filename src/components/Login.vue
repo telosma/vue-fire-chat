@@ -3,7 +3,7 @@
       <div class="column login-wrapper">
         <h2 class="ui teal image header">
           <div class="content">
-            Log-in
+            {{ $t("login.title") }}
           </div>
         </h2>
         <form class="ui large form">
@@ -11,21 +11,21 @@
             <div class="field">
               <div class="ui left icon input">
                 <i class="user icon"></i>
-                <input type="email" name="username" v-model="username" placeholder="E-mail address">
+                <input type="email" name="username" v-model="username" :placeholder="$t('login.input_text.email')">
               </div>
             </div>
             <div class="field">
               <div class="ui left icon input">
                 <i class="lock icon"></i>
-                <input type="password" name="password" v-model="password" placeholder="Password">
+                <input type="password" name="password" v-model="password" :placeholder="$t('login.input_text.password')">
               </div>
             </div>
-            <div class="ui fluid large teal button" @click.prevent="login">Login</div>
+            <div class="ui fluid large teal button" @click.prevent="login">{{ $t("login.buttons.login") }}</div>
           </div>
           <div class="ui error message"></div>
         </form>
         <div class="ui message">
-          New to us? <router-link :to="{ name: 'register' }">Register</router-link>
+          {{ $t("login.messages.none_account") }} <router-link :to="{ name: 'register' }">{{ $t("login.messages.register") }}</router-link>
         </div>
       </div>
     </div>
