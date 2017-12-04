@@ -2,27 +2,16 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import { firebaseIntance } from './config/firebaseConfig'
-import VueI18n from 'vue-i18n'
-import vnMessage from './lang/vn.json'
-import enMessage from './lang/en.json'
+import i18n from './lang/i18n'
+import store from './store'
 
 require('semantic-ui-css/semantic.css')
 
-Vue.use(VueI18n)
-
-const messages = {
-  vn: vnMessage,
-  en: enMessage,
-}
-const i18n = new VueI18n({
-  locale: 'vn', // set locale
-  messages,
-  fallbackLocale: 'vn',
-})
-
-new Vue({
-  el: '#app',
+const app = new Vue({
   i18n,
   router,
+  store,
   render: h => h(App)
-})
+}).$mount('#app')
+
+export default app

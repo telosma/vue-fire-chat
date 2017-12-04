@@ -3,8 +3,8 @@
     <div class="ui floating dropdown labeled search icon button teal select-language right">
       <i class="world icon"></i>
       <span class="text">{{ $t("common.select_language") }}</span>
-      <div class="ui menu blue" v-model="myLocale">
-        <div class="item" v-for="lang in optionLangs" :value="lang.value" @click.prevent="getLang">{{ lang.text }}</div>
+      <div class="ui menu blue">
+        <div class="item" v-for="lang in optionLangs" :value="lang.value" @click.prevent="callSetLangActions">{{ lang.text }}</div>
       </div>
     </div>
     <router-view></router-view>
@@ -32,12 +32,11 @@
           text: 'English',
           value: 'en'
         }
-      ],
-      myLocale: null,
+      ]
     }),
     methods: {
-      getLang (event) {
-        this.myLocale = event.target.getAttribute('value')
+      callSetLangActions (event) {
+        this.$store.dispatch('setLang', event.target.getAttribute('value'))
       }
     }
   }
