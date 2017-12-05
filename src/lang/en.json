@@ -15,5 +15,20 @@
       "none_account": "Create new account",
       "register": "Register"
     }
+  },
+  "register": {
+    "title": "Register new account",
+    "buttons": {
+      "register": "Register"
+    },
+    "input_text": {
+      "name": "Your name",
+      "mail": "E-mail address",
+      "password": "Password",
+      "confirm_password": "Confirm password"
+    },
+    "messages": {
+      "exist_account": "Already have account?"
+    }
   }
 }

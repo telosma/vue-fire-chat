@@ -15,5 +15,20 @@
       "none_account": "Tạo tài khoản mới",
       "register": "Đăng ký"
     }
+  },
+  "register": {
+    "title": "Đăng ký tài khoản",
+    "buttons": {
+      "register": "Đăng ký"
+    },
+    "input_text": {
+      "name": "Tên của bạn",
+      "mail": "Địa chỉ email",
+      "password": "Mật khẩu",
+      "confirm_password": "Xác nhận mật khẩu"
+    },
+    "messages": {
+      "exist_account": "Đã có tài khoản?"
+    }
   }
 }
