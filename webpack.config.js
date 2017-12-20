@@ -51,8 +51,9 @@ module.exports = {
               'css-loader',
               'sass-loader?indentedSyntax'
             ]
-          }
+          },
           // other vue-loader options go here
+          hotReload: true
         }
       },
       {
