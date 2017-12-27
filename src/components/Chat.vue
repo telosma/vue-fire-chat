@@ -7,9 +7,6 @@
 <script>
   import router from 'src/router'
   export default {
-    beforeRouteEnter (to, from, next) {
-      router.go({ name: 'login' })
-    }
   }
 </script>
 
