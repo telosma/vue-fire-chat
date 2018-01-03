@@ -14,7 +14,7 @@ const router = new VueRouter ({
       path: '/',
       name: 'home',
       component: AppHome,
-      meta: { requiresAuth: true }
+      meta: { auth: true }
     },
     {
       path: '/login',
@@ -35,7 +35,7 @@ const router = new VueRouter ({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth)) {
+  if (to.matched.some(record => record.meta.auth)) {
     if (!firebaseInstance.auth().currentUser) {
       next('login')
     } else {

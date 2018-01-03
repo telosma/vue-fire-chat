@@ -80,16 +80,18 @@
           console.log('register')
           firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
             .then((user) => {
-              console.log('register success')
               user.updateProfile({
                 displayName: this.name,
                 photoUrl: "http://www.gravatar.com/avatar/" + md5(user.email) + "?d=identicon",
               }).then(() => {
-                console.log('setUser')
                 this.saveUserToUsersRef(user)
-                this.setUser(user)
-                this.$router.push('/')
-                console.log('Done!')
+                  .then(() => {
+                    this.setUser(user)
+                    this.$router.push('/')
+                  })
+                  .catch(err => {
+                    console.log(err)
+                  })
               }, (error) => {
                 console.log(error)
                 this.errors.push(error.message)
@@ -138,7 +140,7 @@
       },
 
       saveUserToUsersRef (user) {
-        this.usersRef.child(user.uid).set({
+        return this.usersRef.child(user.uid).set({
           name: user.displayName,
           avatar: user.photoURL
         })

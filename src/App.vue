@@ -18,10 +18,6 @@
     var semantic = require('semantic-ui-css/semantic.js')
   }
 
-  $(document).ready(function() {
-      $('.ui.dropdown').dropdown();
-  });
-
   export default {
     data: () => ({
       optionLangs: [
@@ -43,6 +39,9 @@
       ...mapActions('moduleI18n', [
         'setLang',
       ])
+    },
+    mounted () {
+      $('.ui.dropdown').dropdown();
     }
   }
 </script>
