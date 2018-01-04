@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="ui container">
+  <div id="app" class="ui container fluid">
     <div class="ui floating dropdown labeled search icon button teal select-language right">
       <i class="world icon"></i>
       <span class="text">{{ $t("common.select_language") }}</span>
