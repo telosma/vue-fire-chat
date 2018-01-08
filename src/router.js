@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 import AppHome from './components/Chat'
 import AppLogin from './components/Login'
 import AppRegister from './components/Register'
-import { firebaseInstance } from './config/firebaseConfig'
 
 Vue.use(VueRouter)
 
@@ -36,8 +35,8 @@ const router = new VueRouter ({
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.auth)) {
-    if (!firebaseInstance.auth().currentUser) {
-      next('login')
+    if (!firebase.auth().currentUser) {
+      next('/login')
     } else {
       next()
     }
