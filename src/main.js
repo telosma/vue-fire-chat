@@ -11,11 +11,17 @@ require('semantic-ui-css/semantic.css')
 window.firebase = firebaseInstance
 Vue.directive('click-outside', directives.ClickOutside)
 
-const app = new Vue({
-  i18n,
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+const unsubcribe = firebase.auth().onAuthStateChanged(user => {
+  store.dispatch('setUser', user)
+
+  const app = new Vue({
+    i18n,
+    router,
+    store,
+    render: h => h(App)
+  }).$mount('#app')
+
+  unsubcribe()
+})
 
 export default app

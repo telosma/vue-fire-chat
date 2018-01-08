@@ -1,12 +1,12 @@
 <template>
   <div id="app" class="ui container fluid">
-    <div class="ui floating dropdown labeled search icon button teal select-language right">
+<!--     <div class="ui floating dropdown labeled search icon button teal select-language right">
       <i class="world icon"></i>
       <span class="text">{{ $t("common.select_language") }}</span>
       <div class="ui menu blue">
         <div class="item" v-for="lang in optionLangs" :value="lang.value" @click.prevent="callSetLangActions">{{ lang.text }}</div>
       </div>
-    </div>
+    </div> -->
     <router-view></router-view>
   </div>
 </template>
